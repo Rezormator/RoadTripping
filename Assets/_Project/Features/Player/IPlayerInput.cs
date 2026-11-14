@@ -7,4 +7,5 @@ public interface IPlayerInput
     bool JumpPressed { get; }
     bool SprintHeld { get; }
     bool CrouchHeld { get; }
+    bool InteractPressed { get; }
 }

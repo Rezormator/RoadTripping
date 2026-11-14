@@ -18,5 +18,7 @@ public class PlayerInstaller : MonoInstaller
         Container.Bind<PlayerMovementService>().AsSingle();
         Container.Bind<CameraBobService>().AsSingle();
         Container.Bind<PlayerService>().AsSingle();
+
+        Container.Bind<IPlayerSeating>().To<PlayerView>().FromComponentInHierarchy().AsSingle();
     }
 }

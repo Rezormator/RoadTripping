@@ -16,6 +16,12 @@ public class PlayerCrouchService
         _config = config;
     }
 
+    public void Reset()
+    {
+        IsCrouching = false;
+        Blend = 0f;
+    }
+
     public void Tick(bool crouchHeld, bool canStand, float deltaTime)
     {
         IsCrouching = crouchHeld || (IsCrouching && !canStand);

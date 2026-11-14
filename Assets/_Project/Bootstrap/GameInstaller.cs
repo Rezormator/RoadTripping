@@ -4,6 +4,6 @@ public class GameInstaller : MonoInstaller
 {
     public override void InstallBindings()
     {
-        Container.BindInterfacesTo<CursorLocker>().AsSingle();
+        Container.BindInterfacesTo<CursorService>().AsSingle();
     }
 }

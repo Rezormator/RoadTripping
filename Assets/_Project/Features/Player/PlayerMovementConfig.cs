@@ -28,4 +28,14 @@ public class PlayerMovementConfig : ScriptableObject
     [field: SerializeField] public float MouseSensitivity { get; private set; } = 0.3f;
     [field: SerializeField] public float MinPitch { get; private set; } = -89.9f;
     [field: SerializeField] public float MaxPitch { get; private set; } = 89.9f;
+
+    [field: Header("Seated")]
+    [field: SerializeField] public float SeatedCameraHeight { get; private set; } = 0.75f;
+    [field: SerializeField] public float SeatedYawLimit { get; private set; } = 110f;
+    [field: SerializeField] public float SeatedMinPitch { get; private set; } = -60f;
+    [field: SerializeField] public float SeatedMaxPitch { get; private set; } = 60f;
+
+    [field: Header("Push")]
+    [field: SerializeField] public float PushMultiplier { get; private set; } = 1.3f;
+    [field: SerializeField] public float PushDecay { get; private set; } = 10f;
 }
