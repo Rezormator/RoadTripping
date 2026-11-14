@@ -8,6 +8,7 @@ public class PlayerView : MonoBehaviour, IPlayerSeating
     [SerializeField] private CameraEffectsView cameraEffects;
     [SerializeField] private PlayerBodyView body;
 
+    private readonly Collider[] _overlaps = new Collider[8];
     private CharacterController _controller;
     private PlayerService _player;
     private LayerMask _obstacleMask;
@@ -17,6 +18,7 @@ public class PlayerView : MonoBehaviour, IPlayerSeating
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
+        _controller.detectCollisions = false;
     }
 
     [Inject]
@@ -75,6 +77,12 @@ public class PlayerView : MonoBehaviour, IPlayerSeating
 
     private void UpdateOnFoot(float deltaTime)
     {
+        DetectPush(out Vector3 pushVelocity, out Vector3 pushOut);
+        if (pushVelocity != Vector3.zero)
+            _player.AddPush(pushVelocity);
+        if (pushOut != Vector3.zero)
+            _controller.Move(pushOut);
+
         _player.Tick(_controller.isGrounded, CanStand(), deltaTime);
 
         transform.rotation = Quaternion.Euler(0f, _player.Yaw, 0f);
@@ -86,6 +94,58 @@ public class PlayerView : MonoBehaviour, IPlayerSeating
         CollisionFlags flags = _controller.Move(_player.Velocity * deltaTime);
         if ((flags & CollisionFlags.Above) != 0)
             _player.OnCeilingHit();
+    }
+
+    private void DetectPush(out Vector3 pushVelocity, out Vector3 pushOut)
+    {
+        pushVelocity = Vector3.zero;
+        pushOut = Vector3.zero;
+
+        float bodyRadius = _controller.radius + _controller.skinWidth;
+        float radius = bodyRadius + 0.05f;
+        Vector3 center = transform.position + Vector3.up * (_controller.height / 2f);
+        Vector3 bottom = transform.position + Vector3.up * radius;
+        Vector3 top = transform.position + Vector3.up * Mathf.Max(radius, _controller.height - radius);
+
+        int count = Physics.OverlapCapsuleNonAlloc(bottom, top, radius, _overlaps,
+                                                   _obstacleMask, QueryTriggerInteraction.Ignore);
+
+        for (int i = 0; i < count; i++)
+        {
+            Collider other = _overlaps[i];
+            Rigidbody body = other.attachedRigidbody;
+            if (body == null)
+                continue;
+
+            Vector3 away = Vector3.zero;
+            float distance = float.MaxValue;
+            foreach (Vector3 sample in new[] { bottom, center, top })
+            {
+                Vector3 offset = sample - other.ClosestPoint(sample);
+                offset.y = 0f;
+                if (offset.magnitude < distance)
+                {
+                    distance = offset.magnitude;
+                    away = offset;
+                }
+            }
+
+            if (away.sqrMagnitude < 0.0001f)
+            {
+                away = center - body.worldCenterOfMass;
+                away.y = 0f;
+                distance = 0f;
+            }
+
+            away.Normalize();
+            float speed = Vector3.Dot(body.GetPointVelocity(center), away);
+            if (speed > 0f)
+                pushVelocity += away * speed;
+
+            float overlap = bodyRadius - distance;
+            if (overlap > 0f && overlap > Vector3.Dot(pushOut, away))
+                pushOut += away * (overlap - Vector3.Dot(pushOut, away));
+        }
     }
 
     private bool CanStand()

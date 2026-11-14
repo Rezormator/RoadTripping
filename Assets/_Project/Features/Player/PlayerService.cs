@@ -65,4 +65,6 @@ public class PlayerService
     public void ExitSeat(float yaw) => _look.ExitSeat(yaw);
 
     public void OnCeilingHit() => _movement.OnCeilingHit();
+
+    public void AddPush(Vector3 velocity) => _movement.AddPush(velocity);
 }

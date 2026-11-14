@@ -4,6 +4,7 @@ public class PlayerMovementService
 {
     private readonly PlayerMovementConfig _config;
     private Vector3 _horizontalVelocity;
+    private Vector3 _pushVelocity;
     private float _verticalVelocity;
 
     public float HorizontalSpeed => _horizontalVelocity.magnitude;
@@ -40,8 +41,16 @@ public class PlayerMovementService
         }
 
         _verticalVelocity -= _config.Gravity * deltaTime;
+        _pushVelocity = Vector3.MoveTowards(_pushVelocity, Vector3.zero, _config.PushDecay * deltaTime);
 
-        return _horizontalVelocity + Vector3.up * _verticalVelocity;
+        return _horizontalVelocity + _pushVelocity + Vector3.up * _verticalVelocity;
+    }
+
+    public void AddPush(Vector3 velocity)
+    {
+        Vector3 push = velocity * _config.PushMultiplier;
+        if (push.sqrMagnitude > _pushVelocity.sqrMagnitude)
+            _pushVelocity = push;
     }
 
     public void OnCeilingHit()
@@ -53,6 +62,7 @@ public class PlayerMovementService
     public void Stop()
     {
         _horizontalVelocity = Vector3.zero;
+        _pushVelocity = Vector3.zero;
         _verticalVelocity = 0f;
     }
 }
