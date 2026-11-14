@@ -49,4 +49,10 @@ public class PlayerMovementService
         if (_verticalVelocity > 0f)
             _verticalVelocity = 0f;
     }
+
+    public void Stop()
+    {
+        _horizontalVelocity = Vector3.zero;
+        _verticalVelocity = 0f;
+    }
 }

@@ -37,6 +37,7 @@ public class InteractionView : MonoBehaviour
 
         Transform blockerRoot = null;
         float blockerDistance = 0f;
+        IInteractable fallback = null;
 
         for (int i = 0; i < count; i++)
         {
@@ -46,9 +47,15 @@ public class InteractionView : MonoBehaviour
 
             if (blockerRoot != null &&
                 (hit.distance - blockerDistance > _config.SurfaceTolerance || hit.transform.root != blockerRoot))
-                return null;
+                break;
 
             IInteractable interactable = hit.collider.GetComponentInParent<IInteractable>();
+            if (interactable is IFallbackInteractable)
+            {
+                fallback ??= interactable;
+                continue;
+            }
+
             if (interactable != null)
                 return interactable;
 
@@ -59,6 +66,6 @@ public class InteractionView : MonoBehaviour
             }
         }
 
-        return null;
+        return fallback;
     }
 }
