@@ -10,19 +10,19 @@ public class CarSeat : MonoBehaviour, IInteractable
     [SerializeField] private bool isDriverSeat;
 
     private IPlayerSeating _seating;
+    private CarDrivingService _driving;
     private Collider _collider;
-    private SimpleCarDriver _car;
 
     [Inject]
-    public void Construct(IPlayerSeating seating)
+    public void Construct(IPlayerSeating seating, CarDrivingService driving)
     {
         _seating = seating;
+        _driving = driving;
     }
 
     private void Awake()
     {
         _collider = GetComponent<Collider>();
-        _car = GetComponentInParent<SimpleCarDriver>();
     }
 
     public void Interact()
@@ -49,8 +49,8 @@ public class CarSeat : MonoBehaviour, IInteractable
 
     private void SetDriving(bool driving)
     {
-        if (isDriverSeat && _car != null)
-            _car.IsDriven = driving;
+        if (isDriverSeat)
+            _driving.IsDriven = driving;
     }
 
     private bool IsDoorOpen()
