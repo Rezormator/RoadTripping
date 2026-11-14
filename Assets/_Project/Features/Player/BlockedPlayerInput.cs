@@ -7,4 +7,5 @@ public class BlockedPlayerInput : IPlayerInput
     public bool JumpPressed => false;
     public bool SprintHeld => false;
     public bool CrouchHeld => false;
+    public bool InteractPressed => false;
 }

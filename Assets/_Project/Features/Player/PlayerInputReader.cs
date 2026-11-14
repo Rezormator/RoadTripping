@@ -8,6 +8,7 @@ public class PlayerInputReader : IPlayerInput
     private readonly InputAction _jump;
     private readonly InputAction _sprint;
     private readonly InputAction _crouch;
+    private readonly InputAction _interact;
 
     public PlayerInputReader()
     {
@@ -16,6 +17,7 @@ public class PlayerInputReader : IPlayerInput
         _jump = InputSystem.actions.FindAction("Jump");
         _sprint = InputSystem.actions.FindAction("Sprint");
         _crouch = InputSystem.actions.FindAction("Crouch");
+        _interact = InputSystem.actions.FindAction("Interact");
     }
 
     public Vector2 Move => _move.ReadValue<Vector2>();
@@ -23,4 +25,5 @@ public class PlayerInputReader : IPlayerInput
     public bool JumpPressed => _jump.WasPressedThisFrame();
     public bool SprintHeld => _sprint.IsPressed();
     public bool CrouchHeld => _crouch.IsPressed();
+    public bool InteractPressed => _interact.WasPressedThisFrame();
 }
