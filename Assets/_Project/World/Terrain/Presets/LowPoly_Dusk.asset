@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 552e2a1acd448104b9e31989505739d4, type: 3}
+  m_Name: LowPoly_Dusk
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::RoadTripping.EditorTools.TerrainPainting.TerrainPaintPreset
+  description: 'Flat low-poly: one calm grass colour with large soft patches, gravel
+    + dirt shoulder.'
+  style: 0
+  textureSize: 64
+  colorSteps: 3
+  noiseCells: 2
+  grassMain:
+    baseColor: {r: 0.29803923, g: 0.41960785, b: 0.23529412, a: 1}
+    accentColor: {r: 0.3137255, g: 0.43529412, b: 0.2509804, a: 1}
+    variation: 0.6
+    speckles: 0
+    tileSize: 24
+  grassLight:
+    baseColor: {r: 0.40392157, g: 0.4862745, b: 0.25882354, a: 1}
+    accentColor: {r: 0.44313726, g: 0.5254902, b: 0.29803923, a: 1}
+    variation: 0.6
+    speckles: 0
+    tileSize: 24
+  grassDark:
+    baseColor: {r: 0.23529412, g: 0.34901962, b: 0.20392157, a: 1}
+    accentColor: {r: 0.25882354, g: 0.3764706, b: 0.22352941, a: 1}
+    variation: 0.6
+    speckles: 0
+    tileSize: 24
+  dirt:
+    baseColor: {r: 0.41568628, g: 0.32156864, b: 0.21960784, a: 1}
+    accentColor: {r: 0.47843137, g: 0.3764706, b: 0.27058825, a: 1}
+    variation: 0.7
+    speckles: 0.06
+    tileSize: 8
+  gravel:
+    baseColor: {r: 0.46666667, g: 0.4509804, b: 0.41960785, a: 1}
+    accentColor: {r: 0.5647059, g: 0.54901963, b: 0.5176471, a: 1}
+    variation: 0.5
+    speckles: 0.3
+    tileSize: 4
+  rock:
+    baseColor: {r: 0.39215687, g: 0.39607844, b: 0.41568628, a: 1}
+    accentColor: {r: 0.4627451, g: 0.46666667, b: 0.4862745, a: 1}
+    variation: 0.6
+    speckles: 0.08
+    tileSize: 10
+  needles:
+    baseColor: {r: 0.30588236, g: 0.22745098, b: 0.16470589, a: 1}
+    accentColor: {r: 0.36862746, g: 0.27450982, b: 0.19607843, a: 1}
+    variation: 0.6
+    speckles: 0.12
+    tileSize: 6
+  gravelWidth: 2
+  shoulderWidth: 10
+  shoulderFade: 5
+  edgeJitter: 1.5
+  edgeNoiseScale: 6
+  useSlopes: 1
+  dirtSlope: 30
+  rockSlope: 42
+  slopeSoftness: 4
+  useHeight: 1
+  lowlandDark: 0.5
+  highlandLight: 0.5
+  heightBlendNoise: 0.1
+  usePatches: 1
+  patchScale: 70
+  patchCoverage: 0.25
+  patchSoftness: 0.25
+  useNeedles: 1
+  needleRadius: 3
+  treeNameFilter: tree|pine|fir|spruce|conifer
+  sharpness: 1.5
+  seed: 1234
