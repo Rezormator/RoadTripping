@@ -3,7 +3,7 @@ using UnityEngine;
 using Zenject;
 
 [RequireComponent(typeof(Rigidbody))]
-public class CarView : MonoBehaviour
+public class CarView : MonoBehaviour, ILoopTraveler
 {
     [Serializable]
     private class Wheel
@@ -101,6 +101,15 @@ public class CarView : MonoBehaviour
             float needleAngle = (_driving.SpeedometerKmh - _config.SpeedometerModelKmh) * _config.SpeedometerDegreesPerKmh;
             _speedometerNeedle.localRotation = _speedometerNeedleRest * Quaternion.AngleAxis(needleAngle, Vector3.forward);
         }
+    }
+
+    public Vector3 Position => transform.position;
+
+    public void Shift(Vector3 offset)
+    {
+        Rigidbody body = _body != null ? _body : GetComponent<Rigidbody>();
+        body.position += offset;
+        transform.position += offset;
     }
 
     private Vector3 WheelbaseCenter()
