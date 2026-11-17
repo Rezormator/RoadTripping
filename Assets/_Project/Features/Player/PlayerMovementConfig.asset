@@ -30,3 +30,9 @@ MonoBehaviour:
   <MouseSensitivity>k__BackingField: 0.3
   <MinPitch>k__BackingField: -85
   <MaxPitch>k__BackingField: 85
+  <SeatedCameraHeight>k__BackingField: 0.75
+  <SeatedYawLimit>k__BackingField: 150
+  <SeatedMinPitch>k__BackingField: -60
+  <SeatedMaxPitch>k__BackingField: 60
+  <PushMultiplier>k__BackingField: 1.3
+  <PushDecay>k__BackingField: 10
