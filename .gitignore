@@ -65,3 +65,6 @@ crashlytics-build.properties
 *.sln.DotSettings.user
 UserSettings/
 
+
+# Heightmap generator
+Heightmaps/__pycache__/

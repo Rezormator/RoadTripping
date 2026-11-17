@@ -1,0 +1,386 @@
+[
+  {
+    "sector": 2,
+    "first": {
+      "start": [
+        -3549.3,
+        41.81,
+        -3737.73
+      ],
+      "end": [
+        -3461.78,
+        50.81,
+        -3557.89
+      ],
+      "center": [
+        -3505.54,
+        46.31,
+        -3647.81
+      ],
+      "yaw": 25.95
+    },
+    "last": {
+      "start": [
+        -3163.88,
+        82.06,
+        -2089.64
+      ],
+      "end": [
+        -2985.27,
+        91.06,
+        -1999.66
+      ],
+      "center": [
+        -3074.57,
+        86.56,
+        -2044.65
+      ],
+      "yaw": 63.263
+    },
+    "teleportLastToFirst": {
+      "yawDelta": -37.313,
+      "heightDelta": -40.255,
+      "rule": "p_first = Quaternion.Euler(0, yawDelta, 0) * (p_last - last.center) + first.center; centers hold the road height, so heightDelta is already included; rotation.y += yawDelta"
+    },
+    "identicalBand": {
+      "halfWidth": 60.0,
+      "fadeAtEnds": 40.0
+    }
+  },
+  {
+    "sector": 3,
+    "first": {
+      "start": [
+        -2985.27,
+        91.06,
+        -1999.66
+      ],
+      "end": [
+        -2806.65,
+        100.06,
+        -1909.68
+      ],
+      "center": [
+        -2895.96,
+        95.56,
+        -1954.67
+      ],
+      "yaw": 63.263
+    },
+    "last": {
+      "start": [
+        -1954.27,
+        115.82,
+        -183.83
+      ],
+      "end": [
+        -1817.47,
+        124.82,
+        -37.93
+      ],
+      "center": [
+        -1885.87,
+        120.32,
+        -110.88
+      ],
+      "yaw": 43.156
+    },
+    "teleportLastToFirst": {
+      "yawDelta": 20.107,
+      "heightDelta": -24.754,
+      "rule": "p_first = Quaternion.Euler(0, yawDelta, 0) * (p_last - last.center) + first.center; centers hold the road height, so heightDelta is already included; rotation.y += yawDelta"
+    },
+    "identicalBand": {
+      "halfWidth": 60.0,
+      "fadeAtEnds": 40.0
+    }
+  },
+  {
+    "sector": 4,
+    "first": {
+      "start": [
+        -1817.47,
+        124.82,
+        -37.93
+      ],
+      "end": [
+        -1680.68,
+        125.21,
+        107.97
+      ],
+      "center": [
+        -1749.08,
+        125.11,
+        35.02
+      ],
+      "yaw": 43.156
+    },
+    "last": {
+      "start": [
+        44.96,
+        122.55,
+        535.98
+      ],
+      "end": [
+        244.53,
+        122.94,
+        522.86
+      ],
+      "center": [
+        144.75,
+        122.85,
+        529.42
+      ],
+      "yaw": 93.759
+    },
+    "teleportLastToFirst": {
+      "yawDelta": -50.603,
+      "heightDelta": 2.266,
+      "rule": "p_first = Quaternion.Euler(0, yawDelta, 0) * (p_last - last.center) + first.center; centers hold the road height, so heightDelta is already included; rotation.y += yawDelta"
+    },
+    "identicalBand": {
+      "halfWidth": 60.0,
+      "fadeAtEnds": 40.0
+    }
+  },
+  {
+    "sector": 5,
+    "first": {
+      "start": [
+        244.53,
+        122.94,
+        522.86
+      ],
+      "end": [
+        444.1,
+        120.85,
+        509.75
+      ],
+      "center": [
+        344.32,
+        121.95,
+        516.31
+      ],
+      "yaw": 93.759
+    },
+    "last": {
+      "start": [
+        1692.97,
+        102.31,
+        -1091.44
+      ],
+      "end": [
+        1741.71,
+        100.22,
+        -1285.41
+      ],
+      "center": [
+        1717.34,
+        101.32,
+        -1188.42
+      ],
+      "yaw": 165.892
+    },
+    "teleportLastToFirst": {
+      "yawDelta": -72.133,
+      "heightDelta": 20.63,
+      "rule": "p_first = Quaternion.Euler(0, yawDelta, 0) * (p_last - last.center) + first.center; centers hold the road height, so heightDelta is already included; rotation.y += yawDelta"
+    },
+    "identicalBand": {
+      "halfWidth": 60.0,
+      "fadeAtEnds": 40.0
+    }
+  },
+  {
+    "sector": 6,
+    "first": {
+      "start": [
+        1741.71,
+        100.22,
+        -1285.41
+      ],
+      "end": [
+        1790.46,
+        91.32,
+        -1479.37
+      ],
+      "center": [
+        1766.09,
+        95.72,
+        -1382.39
+      ],
+      "yaw": 165.892
+    },
+    "last": {
+      "start": [
+        2715.96,
+        70.96,
+        -3227.15
+      ],
+      "end": [
+        2877.09,
+        62.06,
+        -3345.63
+      ],
+      "center": [
+        2796.53,
+        66.46,
+        -3286.39
+      ],
+      "yaw": 126.327
+    },
+    "teleportLastToFirst": {
+      "yawDelta": 39.565,
+      "heightDelta": 29.256,
+      "rule": "p_first = Quaternion.Euler(0, yawDelta, 0) * (p_last - last.center) + first.center; centers hold the road height, so heightDelta is already included; rotation.y += yawDelta"
+    },
+    "identicalBand": {
+      "halfWidth": 60.0,
+      "fadeAtEnds": 40.0
+    }
+  },
+  {
+    "sector": 7,
+    "first": {
+      "start": [
+        2877.09,
+        62.06,
+        -3345.63
+      ],
+      "end": [
+        3038.22,
+        53.21,
+        -3464.11
+      ],
+      "center": [
+        2957.66,
+        57.56,
+        -3404.87
+      ],
+      "yaw": 126.327
+    },
+    "last": {
+      "start": [
+        3979.22,
+        44.19,
+        -2035.79
+      ],
+      "end": [
+        3954.05,
+        35.33,
+        -1837.38
+      ],
+      "center": [
+        3966.64,
+        39.69,
+        -1936.59
+      ],
+      "yaw": -7.23
+    },
+    "teleportLastToFirst": {
+      "yawDelta": 133.557,
+      "heightDelta": 17.876,
+      "rule": "p_first = Quaternion.Euler(0, yawDelta, 0) * (p_last - last.center) + first.center; centers hold the road height, so heightDelta is already included; rotation.y += yawDelta"
+    },
+    "identicalBand": {
+      "halfWidth": 60.0,
+      "fadeAtEnds": 40.0
+    }
+  },
+  {
+    "sector": 8,
+    "first": {
+      "start": [
+        3954.05,
+        35.33,
+        -1837.38
+      ],
+      "end": [
+        3928.88,
+        30.7,
+        -1638.97
+      ],
+      "center": [
+        3941.47,
+        32.86,
+        -1738.18
+      ],
+      "yaw": -7.23
+    },
+    "last": {
+      "start": [
+        3201.86,
+        46.71,
+        407.65
+      ],
+      "end": [
+        3195.51,
+        42.08,
+        607.54
+      ],
+      "center": [
+        3198.69,
+        44.24,
+        507.59
+      ],
+      "yaw": -1.821
+    },
+    "teleportLastToFirst": {
+      "yawDelta": -5.409,
+      "heightDelta": -11.376,
+      "rule": "p_first = Quaternion.Euler(0, yawDelta, 0) * (p_last - last.center) + first.center; centers hold the road height, so heightDelta is already included; rotation.y += yawDelta"
+    },
+    "identicalBand": {
+      "halfWidth": 60.0,
+      "fadeAtEnds": 40.0
+    }
+  },
+  {
+    "sector": 9,
+    "first": {
+      "start": [
+        3195.51,
+        42.08,
+        607.54
+      ],
+      "end": [
+        3189.15,
+        50.98,
+        807.44
+      ],
+      "center": [
+        3192.33,
+        46.58,
+        707.49
+      ],
+      "yaw": -1.821
+    },
+    "last": {
+      "start": [
+        3561.28,
+        51.44,
+        3280.47
+      ],
+      "end": [
+        3608.23,
+        60.34,
+        3474.88
+      ],
+      "center": [
+        3584.75,
+        55.94,
+        3377.67
+      ],
+      "yaw": 13.577
+    },
+    "teleportLastToFirst": {
+      "yawDelta": -15.398,
+      "heightDelta": -9.362,
+      "rule": "p_first = Quaternion.Euler(0, yawDelta, 0) * (p_last - last.center) + first.center; centers hold the road height, so heightDelta is already included; rotation.y += yawDelta"
+    },
+    "identicalBand": {
+      "halfWidth": 60.0,
+      "fadeAtEnds": 40.0
+    }
+  }
+]

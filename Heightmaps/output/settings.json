@@ -1,0 +1,37 @@
+{
+  "tileSize": 200.0,
+  "resolution": 65,
+  "terrainHeight": 250.0,
+  "segmentLength": 200.0,
+  "segmentsPerSector": [
+    5,
+    10,
+    12,
+    11,
+    13,
+    12,
+    14,
+    13,
+    15,
+    5
+  ],
+  "biomes": [
+    "Lowland start",
+    "Foothills",
+    "Mountains",
+    "Mesa plateau",
+    "High plateau",
+    "Descent",
+    "Rolling hills",
+    "Lake valley",
+    "Rising hills",
+    "Finale plain"
+  ],
+  "byteOrder": "little-endian",
+  "firstRow": "south (lowest Z)",
+  "tiles": 203,
+  "worldOffset": [
+    -4400.0,
+    -4400.0
+  ]
+}
